@@ -1,25 +1,104 @@
-// nav{
-//     margin: 0;
-//     max-width: 1280px;
-//     width: 100%;
 
-    .nav-menu{
-        padding: 0;
-        margin: 0;
-        height: 50px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        list-style-type: none;
-        position: relative;
-    }
-// }
-.section-carousel{
+header{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    max-width: 1000px;
-    margin-left: 150px;
-    position: relative;
-    align-items: center;
+    background-color: $color-body;
+
+nav {
+  margin: 0;
+  max-width: 1280px;
+  width: 100%;
+  overflow: hidden;
+  text-decoration: none; 
+  
+  .nav-menu {
+    // padding: 0;
+    // margin: 0;
+    // height: 50px;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-around;
+    // list-style-type: none;
+    // position: relative;
+    // display: flex;
+    // flex-direction: row;
+    float: left;
+    overflow: hidden; 
+    text-decoration: none;
+
+    &:hover .submenu{
+        display: block;
+        background-color: $bg-color-body;
+    }
+    li a {
+        // display: flex;
+        // flex-direction: row;
+        text-decoration: none;
+        align-self: center;
+        // color: $color-body;
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    
+    .servises-button {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $bg-color-body;
+      }
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      text-decoration: none;
+
+      li a{
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        &:hover {
+            background-color: #ddd;
+          }
+      }
+    
+    }
+  }
+  a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    &:hover {
+      background-color: $bg-color-body;
+    }
+  }
+}
+}
+.section-carousel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  max-width: 1000px;
+  margin-left: 150px;
+  position: relative;
+  align-items: center;
 }
