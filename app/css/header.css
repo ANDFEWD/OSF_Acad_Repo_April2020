@@ -1,17 +1,152 @@
-/* Error: Undefined variable.
- *   ,
- * 5 |     background-color: $color-body;
- *   |                       ^^^^^^^^^^^
- *   '
- *   scss\header.scss 5:23  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 5 \2502      background-color: $color-body;\d\a   \2502                        ^^^^^^^^^^^\a   \2575 \a   scss\\header.scss 5:23  root stylesheet";
+.header {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  justify-content: center;
+  width: 100%;
+  height: 62px;
 }
+@media (min-width: 80em) {
+  .header {
+    display: inline-flex;
+    height: 80px;
+  }
+}
+.header .logo {
+  margin-top: 10px;
+  margin-bottom: 13px;
+}
+.header .logo .logo-icon {
+  width: 45px;
+  height: 45px;
+}
+.header .nav {
+  background-color: #262a32;
+  padding: 0px;
+  position: absolute;
+  top: 62px;
+  width: 100%;
+}
+@media (min-width: 80em) {
+  .header .nav {
+    top: 0px;
+  }
+}
+.header .nav .nav_list {
+  padding: 0px;
+}
+@media (min-width: 80em) {
+  .header .nav .nav_list {
+    margin: 0px 0px;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+  }
+}
+.header .nav .nav_list .nav__item {
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: center;
+  margin-left: 15px;
+}
+@media (min-width: 80em) {
+  .header .nav .nav_list .nav__item {
+    width: 125px;
+    display: inline-flex;
+    height: 65px;
+  }
+}
+.header .nav .nav_list .nav__item .nav__item--active .nav__submenu-contanier {
+  display: block;
+}
+.header .nav .nav_list .nav__item .nav__submenu {
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: center;
+  position: relative;
+  padding: 0px;
+}
+@media (min-width: 80em) {
+  .header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier {
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    display: none;
+  }
+}
+.header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item {
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: center;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}
+@media (min-width: 80em) {
+  .header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item {
+    width: 120px;
+  }
+}
+.header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item .submenu__product {
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0px;
+}
+.header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item .submenu__product .nav__submenu-item-link {
+  padding: 0px;
+  line-height: 2.8em;
+}
+.header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item .submenu__sale {
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: center;
+  padding: 0px;
+}
+.header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item .submenu__sale .nav__submenu-item-link {
+  padding: 0px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item .submenu__image {
+  display: block;
+  text-decoration: none;
+  list-style-type: none;
+  justify-content: center;
+  position: absolute;
+  margin-top: 200px;
+  width: 270px;
+  height: 276px;
+}
+.header .nav .nav_list .nav__item .nav__submenu .nav__submenu-contanier .nav__submenu-item .submenu__image .submenu__image-block-item {
+  border-radius: 6px;
+}
+.header .nav .nav_list .nav__item .nav__item-button {
+  border: none;
+  outline: none;
+  background-color: #262a32;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 0px;
+}
+@media (min-width: 80em) {
+  .header .nav .nav_list .nav__item .nav__item-button {
+    font-weight: 400;
+    width: 100%;
+  }
+}
+.header .nav .nav_list .nav__item .nav__submenu-item-button {
+  border: none;
+  outline: none;
+  background-color: #262a32;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0px;
+}
+
+/*# sourceMappingURL=header.css.map */

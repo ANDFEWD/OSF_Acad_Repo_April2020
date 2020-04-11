@@ -12,14 +12,15 @@
   <!-- <link rel="stylesheet" href="css/jquery.fancybox.min.css"> -->
 
   <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"> -->
   <!-- Google Fonts Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"> -->
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <!-- Material Design Bootstrap -->
-  <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- <link rel="stylesheet" href="css/mdb.min.css"> -->
   
   <link rel="stylesheet" href="css/main.css">
 
@@ -27,75 +28,95 @@
 
 <body>
   <!-- header -->
-<header class="header-main">
-  <a href="#" class="header-logo"  >
-<img src="img/navigation/logo.png" alt="logo-icon" class="logo-icon">
-<span class="logo-text1">OSF</span>
-<span class="logo-text2">Academy</span>
-  </a>
-  <nav class="main-nav">
-    <ul class="nav-menu">
-      <li>
-        <button class="servises-button">SEVICES <i class="fa fa-caret-down"></i></button>
-          <ul class="submenu">
-          <li>
-            <span class="servises-drop-categories">PRODUCT CATEGORIES</span>
-            <ul class="product-drop-menu">
-              <li><a href="#">Accessories</a></li>      
-              <li><a href="#">Alcohol</a></li>
-              <li><a href="#">Art</a></li>
-              <li><a href="#">Books</a></li>
-              <li><a href="#">Drink</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Flowers & Plant</a></li>
-              <li><a href="#">Food</a></li>
-              <li><a href="#">Gadgets</a></li>       
-              <li><a href="#">Garden</a></li>
-              <li><a href="#">Grocery</a></li>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Jewelry</a></li>
-              <li><a href="#">Kids & Baby</a></li>
-              <li><a href="#">Men's Fashion</a></li>
-              <li><a href="#">Mobile</a></li>
-              <li><a href="#">Motorcycles</a></li>        
-              <li><a href="#">Movies</a></li>
-              <li><a href="#">Music</a></li>
-              <li><a href="#">Office</a></li>
-              <li><a href="#">Pets</a></li>
-              <li><a href="#">Romantic</a></li>
-              <li><a href="#">Sport</a></li>
-              <li><a href="#">Toys</a></li>
+<header class="header">
+ <a href="#" class="logo"  >
+  <img src="img/navigation/logo.png" alt="logo-icon" class="logo-icon">
+<!-- <span class="logo-text1">OSF</span>
+<span class="logo-text2">Academy</span> -->
+ </a>
+
+  <nav class="nav">
+    <ul class="nav_list">
+      <li class="nav__item">
+        <button class="nav__item-button">SERVICES <i class="fa fa-caret-down"></i></button>
+          <ul class="nav__submenu">
+            <div class="nav__submenu-contanier">
+          <li class="nav__submenu-item">
+            <button class="nav__submenu-item-button">PRODUCT CATEGORIES <i class="fa fa-caret-down"></i></button>
+            <ul class="submenu__product">
+              <li class="nav__submenu-item-link><a href="#">Accessories</a></li>      
+              <li class="nav__submenu-item-link><a href="#">Alcohol</a></li>
+              <li class="nav__submenu-item-link><a href="#">Art</a></li>
+              <li class="nav__submenu-item-link><a href="#">Books</a></li>
+              <li class="nav__submenu-item-link><a href="#">Drink</a></li>
+              <li class="nav__submenu-item-link><a href="#">Electronics</a></li>
+              <li class="nav__submenu-item-link><a href="#">Flowers & Plant</a></li>
+              <li class="nav__submenu-item-link><a href="#">Food</a></li>
+              <li class="nav__submenu-item-link><a href="#">Gadgets</a></li>       
+              <li class="nav__submenu-item-link><a href="#">Garden</a></li>
+              <li class="nav__submenu-item-link><a href="#">Grocery</a></li>
+              <li class="nav__submenu-item-link><a href="#">Home</a></li>
+              <li class="nav__submenu-item-link><a href="#">Jewelry</a></li>
+              <li class="nav__submenu-item-link><a href="#">Kids & Baby</a></li>
+              <li class="nav__submenu-item-link><a href="#">Men's Fashion</a></li>
+              <li class="nav__submenu-item-link><a href="#">Mobile</a></li>
+              <li class="nav__submenu-item-link><a href="#">Motorcycles</a></li>        
+              <li class="nav__submenu-item-link><a href="#">Movies</a></li>
+              <li class="nav__submenu-item-link><a href="#">Music</a></li>
+              <li class="nav__submenu-item-link><a href="#">Office</a></li>
+              <li class="nav__submenu-item-link><a href="#">Pets</a></li>
+              <li class="nav__submenu-item-link><a href="#">Romantic</a></li>
+              <li class="nav__submenu-item-link><a href="#">Sport</a></li>
+              <li class="nav__submenu-item-link><a href="#">Toys</a></li>
              </ul>
           </li>
 
-          <li>
-            <span class="servises-drop-sale">SALE</span>
-            <ul class="sale-drop-menu">
-              <li><a href="#">Accessories</a></li>      
-              <li><a href="#">Alcohol</a></li>
-              <li><a href="#">Art</a></li>
-              <li><a href="#">Books</a></li>
-              <li><a href="#">Drink</a></li>
-              <li><a href="#">Electronics</a></li>
-              <li><a href="#">Flowers & Plant</a></li>
-              <li><a href="#">Food</a></li>
+          <li class="nav__submenu-item">
+           
+            <button class="nav__submenu-item-button">SALE <i class="fa fa-caret-down"></i></button>
+            <ul class="submenu__sale">
+              <li class="nav__submenu-item-link><a href="#">Accessories</a></li>      
+              <li class="nav__submenu-item-link></liclass>><a href="#">Alcohol</a></li>
+              <li class="nav__submenu-item-link><a href="#">Art</a></li>
+              <li class="nav__submenu-item-link><a href="#">Books</a></li>
+              <li class="nav__submenu-item-link><a href="#">Drink</a></li>
+              <li class="nav__submenu-item-link><a href="#">Electronics</a></li>
+              <li class="nav__submenu-item-link><a href="#">Flowers & Plant</a></li>
+              <li class="nav__submenu-item-link><a href="#">Food</a></li>
              </ul>
           </li>
 
-          <li>
-            <img src="img/navigation/drop-image.png" alt="" class="drop-menu-img">
-              
-             </ul>
+          <li class="submenu__image">
+            <div class="submenu__image-block">
+            <img src="img/navigation/drop-image.png" alt="" class="submenu__image-block-item">
+          </div>
           </li>
+        </div>
+         </ul>
+         
+         
+
+          
+
+          <li class="nav__item">
+            <button class="nav__item-button">COMPANY <i class="fa fa-caret-down"></i></button>
+           </li>
+         
+            <li class="nav__item">
+            <button class="nav__item-button">LIBRARY <i class="fa fa-caret-down"></i></button>
+           </li>
+            <li class="nav__item">
+            <button class="nav__item-button">CONTACT US <i class="fa fa-caret-down"></i></button>
+           </li>
         </ul> 
      </li>
-     <li><a href="#">COMPANY</a></li>
-     <li><a href="#">LIBRARY</a></li>
-     <li><a href="#">CONTACT US</a></li>
+
      
-    <ul>  
+     
+     
   </nav>
 </header>
+
 <!-- header -->
 
 <!-- carousel -->
@@ -183,13 +204,13 @@
 <!-- footer -->
    
 <!-- jQuery -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
 <!-- Bootstrap tooltips -->
-<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- <script type="text/javascript" src="js/popper.min.js"></script> -->
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
 
 <script src='js/main.js'></script>
  <!-- <script src="app.js"></script>  -->

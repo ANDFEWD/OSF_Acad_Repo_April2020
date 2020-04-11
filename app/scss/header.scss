@@ -1,104 +1,278 @@
+@import "free/mq";
+@import "variables";
 
-header{
-    display: flex;
-    flex-direction: row;
-    background-color: $color-body;
-
-nav {
-  margin: 0;
-  max-width: 1280px;
-  width: 100%;
-  overflow: hidden;
-  text-decoration: none; 
-  
-  .nav-menu {
-    // padding: 0;
-    // margin: 0;
-    // height: 50px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-around;
-    // list-style-type: none;
-    // position: relative;
-    // display: flex;
-    // flex-direction: row;
-    float: left;
-    overflow: hidden; 
-    text-decoration: none;
-
-    &:hover .submenu{
-        display: block;
-        background-color: $bg-color-body;
-    }
-    li a {
-        // display: flex;
-        // flex-direction: row;
-        text-decoration: none;
-        align-self: center;
-        // color: $color-body;
-        font-size: 13px;
-        padding: 10px 15px;
-    }
-
-    
-    .servises-button {
-      font-size: 16px;
-      border: none;
-      outline: none;
-      color: white;
-      padding: 14px 16px;
-      background-color: inherit;
-      font-family: inherit;
-      margin: 0;
-      text-decoration: none;
-
-      &:hover {
-        background-color: $bg-color-body;
-      }
-    }
-
-    .submenu {
-      display: none;
-      position: absolute;
-      background-color: #f9f9f9;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      text-decoration: none;
-
-      li a{
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        &:hover {
-            background-color: #ddd;
-          }
-      }
-    
-    }
-  }
-  a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    &:hover {
-      background-color: $bg-color-body;
-    }
-  }
-}
-}
-.section-carousel {
+.header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  max-width: 1000px;
-  margin-left: 150px;
   position: relative;
-  align-items: center;
+  background-color: $color-body;
+  justify-content: center;
+  width: 100%;
+  height: 62px;
+  @include mq($from: desktop) {
+    display: inline-flex;
+    height: 80px;
+  }
+
+  .logo {
+    margin-top: 10px;
+    margin-bottom: 13px;
+    .logo-icon {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  .nav {
+    // display: flex;
+    background-color: $bg-color-body;
+    padding: 0px;
+    position: absolute;
+    top: 62px;
+    width: 100%;
+    @include mq($from: desktop) {
+      top: 0px;
+      // display: inline-block;
+    }
+    .nav_list {
+      padding: 0px;
+      @include mq($from: desktop) {
+       margin: 0px 0px;
+       width: 100%;
+       height: 80px;
+       background-color: $color-body;
+        
+      }
+      
+      .nav__item {
+        text-decoration: none;
+        list-style-type: none;
+        justify-content: center;
+        margin-left: 15px;
+        @include mq($from: desktop) {
+          width: 125px;
+          display: inline-flex;
+          height: 65px;
+        }
+
+        .nav__item--active{
+          .nav__submenu-contanier {
+            display: block;
+          }
+        }
+
+
+        .nav__submenu {
+          text-decoration: none;
+          list-style-type: none;
+          justify-content: center;
+          position: relative;
+          padding: 0px;
+          .nav__submenu-contanier {
+            @include mq($from: desktop) {
+              position: absolute;
+              width: 100%;
+              top: 80px;
+              display: none;
+          
+            }
+            
+            .nav__submenu-item {
+              text-decoration: none;
+              list-style-type: none;
+              justify-content: center;
+              color: $color-body;
+              font-family: $text-primary-family;
+              font-weight: 600;
+              font-size: 13px;
+              @include mq($from: desktop) {
+                width: 120px;
+              }
+
+              .submenu__product {
+                text-decoration: none;
+                list-style-type: none;
+                justify-content: center;
+                padding: 0px;
+
+                .nav__submenu-item-link {
+                  padding: 0px;
+                  line-height: 2.8em;
+                }
+              }
+              .submenu__sale {
+                text-decoration: none;
+                list-style-type: none;
+                justify-content: center;
+                padding: 0px;
+                .nav__submenu-item-link {
+                  padding: 0px;
+                  margin-top: 3px;
+                  margin-bottom: 3px;
+                }
+              }
+              .submenu__image {
+                display: block;
+                text-decoration: none;
+                list-style-type: none;
+                justify-content: center;
+                position: absolute;
+                margin-top: 200px;
+                width: 270px;
+                height: 276px;
+
+                .submenu__image-block-item {
+                  border-radius: 6px;
+                }
+              }
+            }
+          }
+        }
+        .nav__item-button {
+          border: none;
+          outline: none;
+          background-color: $bg-color-body;
+          color: $color-body;
+          font-family: $text-primary-family;
+          font-weight: bold;
+          font-size: 17px;
+          padding: 0px;
+          
+          @include mq($from: desktop) {
+            font-weight: 400;
+            width: 100%;
+          }
+        }
+        .nav__submenu-item-button {
+          border: none;
+          outline: none;
+          background-color: $bg-color-body;
+          color: $color-body;
+          font-family: $text-primary-family;
+          font-weight: bold;
+          font-size: 14px;
+          padding: 0px;
+          
+        }
+      }
+    }
+
+    // .submenu__image-block {
+    //   display: flex;
+    //   justify-content: center;
+    //   margin-top: 200px;
+    //   img {
+    //     width: 270px;
+    //     height: 276px;
+    //     border-radius: 6px;
+    //   }
+    // }
+  }
 }
+
+// .nav__item-button {
+//   border: none;
+//   outline: none;
+// }
+
+// header{
+//     display: flex;
+//     flex-direction: row;
+//     background-color: $color-body;
+
+// nav {
+//   margin: 0;
+//   max-width: 1280px;
+//   width: 100%;
+//   overflow: hidden;
+//   text-decoration: none;
+
+//   .nav-menu {
+//     // padding: 0;
+//     // margin: 0;
+//     // height: 50px;
+//     // display: flex;
+//     // flex-direction: row;
+//     // justify-content: space-around;
+//     // list-style-type: none;
+//     // position: relative;
+//     // display: flex;
+//     // flex-direction: row;
+//     float: left;
+//     overflow: hidden;
+//     text-decoration: none;
+
+//     &:hover .submenu{
+//         display: block;
+//         background-color: $bg-color-body;
+//     }
+//     li a {
+//         // display: flex;
+//         // flex-direction: row;
+//         text-decoration: none;
+//         align-self: center;
+//         // color: $color-body;
+//         font-size: 13px;
+//         padding: 10px 15px;
+//     }
+
+//     .servises-button {
+//       font-size: 16px;
+//       border: none;
+//       outline: none;
+//       color: white;
+//       padding: 14px 16px;
+//       background-color: inherit;
+//       font-family: inherit;
+//       margin: 0;
+//       text-decoration: none;
+
+//       &:hover {
+//         background-color: $bg-color-body;
+//       }
+//     }
+
+//     .submenu {
+//       display: none;
+//       position: absolute;
+//       background-color: #f9f9f9;
+//       min-width: 160px;
+//       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+//       z-index: 1;
+//       text-decoration: none;
+
+//       li a{
+//         float: none;
+//         color: black;
+//         padding: 12px 16px;
+//         text-decoration: none;
+//         display: block;
+//         text-align: left;
+//         &:hover {
+//             background-color: #ddd;
+//           }
+//       }
+
+//     }
+//   }
+//   a {
+//     float: left;
+//     font-size: 16px;
+//     color: white;
+//     text-align: center;
+//     padding: 14px 16px;
+//     text-decoration: none;
+//     &:hover {
+//       background-color: $bg-color-body;
+//     }
+//   }
+// }
+// }
+// .section-carousel {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-evenly;
+//   max-width: 1000px;
+//   margin-left: 150px;
+//   position: relative;
+//   align-items: center;
+// }
