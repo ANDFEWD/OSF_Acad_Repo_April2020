@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>OSF Awesome WebSite</title>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
   <!-- <link href="css/mdb.min.css" rel="stylesheet"> -->
   <!-- <link rel="stylesheet" href="css/jquery.fancybox.min.css"> -->
 
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
+  <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"> -->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"> -->
@@ -31,16 +31,19 @@
 <header class="header">
  <a href="#" class="logo"  >
   <img src="img/navigation/logo.png" alt="logo-icon" class="logo-icon">
-<!-- <span class="logo-text1">OSF</span>
-<span class="logo-text2">Academy</span> -->
+  <div class="logo__text">
+    <span class="logo__text-top">OSF</span> 
+    <span class="logo__text-bottom">Academy</span> 
+  </div>
  </a>
 
   <nav class="nav">
     <ul class="nav_list">
-      <li class="nav__item">
-        <button class="nav__item-button">SERVICES <i class="fa fa-caret-down"></i></button>
+      <li class="nav__item" id="nav__item-services">
+        <button class="nav__item-button" id="services-button">SERVICES <i class="fa fa-caret-down"></i></button>
+        <div class="nav__submenu-contanier">
           <ul class="nav__submenu">
-            <div class="nav__submenu-contanier">
+            
           <li class="nav__submenu-item">
             <button class="nav__submenu-item-button">PRODUCT CATEGORIES <i class="fa fa-caret-down"></i></button>
             <ul class="submenu__product">
@@ -86,27 +89,30 @@
              </ul>
           </li>
 
-          <li class="submenu__image">
-            <div class="submenu__image-block">
-            <img src="img/navigation/drop-image.png" alt="" class="submenu__image-block-item">
-          </div>
-          </li>
-        </div>
+          
+           
+          
+        
          </ul>
+
+         <div class="nav__submenu-image">
+          <img src="img/navigation/drop-image.png" alt="" class="nav__submenu-image-item">
+        </div>
+        </div>
          
          
 
           
 
           <li class="nav__item">
-            <button class="nav__item-button">COMPANY <i class="fa fa-caret-down"></i></button>
+            <button class="nav__item-button">COMPANY </button>
            </li>
          
             <li class="nav__item">
-            <button class="nav__item-button">LIBRARY <i class="fa fa-caret-down"></i></button>
+            <button class="nav__item-button">LIBRARY </i></button>
            </li>
             <li class="nav__item">
-            <button class="nav__item-button">CONTACT US <i class="fa fa-caret-down"></i></button>
+            <button class="nav__item-button">CONTACT US </i></button>
            </li>
         </ul> 
      </li>
@@ -115,6 +121,7 @@
      
      
   </nav>
+  
 </header>
 
 <!-- header -->
