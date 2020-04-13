@@ -5,9 +5,16 @@
   display: flex;
   position: relative;
   background-color: $color-body;
-  justify-content: center;
+
   width: 100%;
   height: 62px;
+
+  @include mq($until: tablet) {
+    justify-content: center;
+    // align-content: flex-end;
+    // align-items: stretch;
+  }
+
   @include mq($from: desktop) {
     justify-content: left;
     height: 80px;
@@ -71,14 +78,18 @@
     // display: flex;
     background-color: $bg-color-body;
     padding: 0px;
-    position: absolute;
     top: 62px;
-    width: 100%;
+    @include mq($until: tablet) {
+      width: 100%;
+      position: absolute;
+    }
+
     @include mq($from: desktop) {
-      position: relative;
+      // position: relative;
       top: 0px;
-      right: 15px;
-      margin-left: 170px;
+      width: 100%;
+      // right: 15px;
+      // margin-left: 170px;
       // display: inline-block;
     }
     .nav_list {
@@ -86,23 +97,13 @@
       @include mq($from: desktop) {
         display: flex;
         margin: 0px 0px;
+        padding-left: 180px;
         width: 100%;
         height: 80px;
         background-color: $color-body;
         top: 0px;
         right: 15px;
         align-items: flex-end;
-      }
-
-      .nav__item--active {
-        .nav__item {
-          #nav__item-services {
-          .nav__submenu-contanier {
-            display: flex;
-            background-color: $bg-color-body;
-          }
-        }
-        }
       }
 
       .nav__item {
@@ -123,7 +124,9 @@
             top: 80px;
             display: none;
             background-color: $bg-color-body;
-            justify-content: space-evenly;
+            justify-content: space-between;
+            left: 0px;
+            right: 0px;
           }
           .nav__submenu {
             text-decoration: none;
@@ -132,6 +135,11 @@
             // position: relative;
             padding: 0px;
             margin-left: 20px;
+            @include mq($from: desktop) {
+              justify-content: space-evenly;
+              display: flex;
+              width: 65%;
+            }
 
             .nav__submenu-item {
               text-decoration: none;
@@ -141,8 +149,12 @@
               font-family: $text-primary-family;
               font-weight: 600;
               font-size: 13px;
+              line-height: 1.3em;
               @include mq($from: desktop) {
-                width: 120px;
+                display: flex;
+                flex-direction: column;
+                line-height: 2em;
+                justify-content: flex-start;
               }
 
               .submenu__product {
@@ -172,15 +184,31 @@
             }
           }
           .nav__submenu-image {
-            display: flex;
             justify-content: center;
             // position: absolute;
-            margin-top: 200px;
-            width: 100%;
-            height: 276px;
+            // margin-top: 200px;
 
+            width: 35%;
+            // height: 276px;
+            @include mq($until: tablet) {
+              position: absolute;
+              background-color: $bg-color-body;
+              top: 707px;
+              left: 0px;
+              padding-top: 200px;
+              display: flex;
+              width: 100%;
+            }
             .nav__submenu-image-item {
               border-radius: 8px;
+              @include mq($until: tablet) {
+                margin-bottom: 10px;
+                width: 70%;
+                margin: 20px 20px;
+              }
+              @include mq($from: desktop) {
+                margin: 60px 60px;
+              }
             }
           }
         }
@@ -195,12 +223,11 @@
           font-weight: bold;
           font-size: 15px;
           text-align: center;
-          &#services-button {
+
+          @include mq($until: tablet) {
             justify-content: space-between;
-            padding-left: 16px;
-            .fa {
-              margin-right: 6px;
-            }
+            width: 95%;
+            padding: 8px 6px;
           }
 
           @include mq($from: desktop) {
@@ -209,13 +236,19 @@
             font-weight: 600;
             width: 100%;
           }
+          &-services {
+            justify-content: space-around;
+          //   @include mq($from: desktop) {
+          //     margin-left: 20px;
+          // }
+        }
 
-          &.nav__item-button--active {
-            background-color: $bg-color-body;
-            color: $color-body;
-            border-bottom: thick;
-            border-color: $nav-border-color;
-          }
+          // &.nav__item-button--active {
+          //   background-color: $bg-color-body;
+          //   color: $color-body;
+          //   border-bottom: thick;
+          //   border-color: $nav-border-color;
+          // }
         }
         .nav__submenu-item-button {
           border: none;
@@ -226,9 +259,33 @@
           font-weight: bold;
           font-size: 14px;
           padding: 0px;
+          @include mq($until: tablet) {
+            width: 92.5%;
+            display: flex;
+            justify-content: space-around;
+          }
+          @include mq($from: desktop) {
+            display: flex;
+            .fa {
+              display: none;
+            }
+          }
         }
 
-        
+        &.nav__item--active {
+          .nav__submenu-contanier {
+            display: flex;
+            background-color: $bg-color-body;
+          }
+          .nav__item-button {
+            @include mq($from: desktop) {
+              background-color: $bg-color-body;
+              color: $color-body;
+              border-bottom: 3px solid ;
+              border-bottom-color: $nav-border-color;
+            }
+          }
+        }
       }
 
       // .nav__item--active {
