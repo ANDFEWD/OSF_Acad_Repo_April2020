@@ -1206,5 +1206,156 @@ body .benefits__column-about-text {
   font-size: 12px;
   color: #fff;
 }
+body .footer {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .footer .footer__container {
+  height: 345px;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+body .footer .footer__container .footer__contacts {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  padding-left: 60px;
+}
+body .footer .footer__container .footer__contacts .footer__copyright {
+  width: 230px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+body .footer .footer__container .footer__contacts .footer__contact {
+  color: #333333;
+  width: 230px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+body .footer .footer__container .footer__contacts .footer__contact .footer__contact-header {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+}
+body .footer .footer__container .footer__contacts .footer__contact .footer__contact-adress {
+  width: 100%;
+}
+body .footer .footer__container .footer__contacts .footer__contact .footer__contact-email {
+  width: 100%;
+  margin: 20px 0px;
+}
+body .footer .footer__container .footer__contacts .footer__contact .footer__contact-phone {
+  width: 100%;
+}
+body .footer .footer__container .footer__categoriest {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding-right: 35px;
+}
+body .footer .footer__container .footer__categoriest .footer__categoriest-header {
+  margin-top: 45px;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+}
+body .footer .footer__container .footer__categoriest .footer__categoriest-content {
+  margin-top: 25px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+body .footer .footer__container .footer__categoriest .footer__categoriest-content .footer__categoriest-column {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  line-height: 2.4em;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #b2b2b2;
+}
+body .footer .footer__container .footer__about {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  padding-left: 80px;
+}
+body .footer .footer__container .footer__about .footer__about-header {
+  margin-top: 45px;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+}
+body .footer .footer__container .footer__about .footer__about-content {
+  margin-top: 25px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+body .footer .footer__container .footer__about .footer__about-content .footer__about-column {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  line-height: 2.4em;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #b2b2b2;
+}
+body .footer .footer__container .footer__socials {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  padding-right: 60px;
+}
+body .footer .footer__container .footer__socials .footer__socials-column {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px 0px;
+}
+body .footer .footer__container .footer__socials .footer__socials-column .footer__socials-icon {
+  color: #b2b2b2;
+}
+body .footer .footer__container .footer__socials .footer__socials-column .footer__socials-icon .footer__facebook_icon {
+  color: #23c46e;
+}
+
+.footer__link {
+  color: #b2b2b2;
+  text-decoration: none;
+}
 
 /*# sourceMappingURL=main.css.map */
