@@ -859,7 +859,7 @@ body {
       @include mq($from: tablet) {
         position: absolute;
         top: 900px;
-        left: 600px;
+        left: 550px;
         width: 260px;
         height: 40px;
         border: 2px solid;
@@ -878,14 +878,15 @@ body {
     }
   }
 
-  .banner-container {
+  .banner {
     width: 100%;
     height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 140px;
-    .banner {
+    position: relative;
+    .banner__image {
       width: 100%;
       display: flex;
       align-items: center;
@@ -897,7 +898,81 @@ body {
         width: 100%;
       }
     }
+    .banner__title{
+      position: absolute;
+      width: 415px;
+      height: 130px;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: center;
+      &-header{
+        font-family: $text-primary-family;
+        font-weight: 900;
+        font-size: 46px;
+        color: $color-body;
+        width: 100%;
+
+      }
+      &-text{
+        font-family: $text-primary-family;
+        font-weight: 400;
+        font-size: 15px;
+        color: $color-body;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 90%;
+
+      }
+
+    }
   }
+
+  .featured-slide{
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    max-width: 1280px;
+    align-items: center;
+    justify-content: center;
+    .featured-slide__title{
+      width: 415px;
+      height: 130px;
+      display: flex;
+      flex-flow: column;
+      justify-content: flex-start;
+      align-items: center;
+      &-header{
+        font-family: $text-primary-family;
+        font-weight: 700;
+        font-size: 38px;
+        color: $color-body;
+        width: 100%;
+        text-align: center;
+      }
+      &-text{
+        font-family: $text-primary-family;
+        font-weight: 400;
+        font-size: 18px;
+        color: $color-body;
+        text-align: center;
+        width: 100%;
+
+      }
+
+    }
+    
+    .carousel{
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+  }
+
+
 
   .benefits {
     width: 100%;
