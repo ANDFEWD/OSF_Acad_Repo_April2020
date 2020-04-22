@@ -28,9 +28,13 @@
 
 <body>
   <!-- header -->
-<header class="header-container">
+<header class="header">
   
-  <div class="header">
+  <div class="header-container">
+    <!-- Collapse button -->
+  <button class="navbar-toggler "><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span>
+  </button>
+
  <a href="#" class="logo"  >
   <img src="img/navigation/logo.png" alt="logo-icon" class="logo-icon">
   <div class="logo__text">
@@ -38,7 +42,7 @@
     <span class="logo__text-bottom">Academy</span> 
   </div>
  </a>
-
+ <div class="nav-block">
   <nav class="nav">
     <ul class="nav_list">
       <li class="nav__item">
@@ -115,40 +119,58 @@
 
   <div class="features">
     <div class="features__item">
-      <ul class="features__item-link">
-        <li class="features__lang">
+      <!-- <ul class="features__item-link"> -->
+        <div class="features__lang">
           <button class="features__button">EN <i class="fa fa-caret-down"></i></button>
           <ul class="features__lang-list">
             <li class="features__lang-element">UKR</li>
             <li class="features__lang-element">DEN</li>
           </ul>
-        </li>
-        <li class="features__currency">
+        </div>
+        <div class="features__currency">
           <button class="features__button"><i class="fas fa-dollar-sign"></i> US <i class="fa fa-caret-down"></i></button>
           <ul class="features__currency-list">
             <li class="features__currency-element"><i class="fas fa-hryvnia"></i> UAH</li>
             <li class="features__currency-element"><i class="fas fa-euro-sign"></i> EUR</li>
          </ul>
-        </li>
-      </ul>
+        </div>
+      <!-- </ul> -->
 
     </div>
 
     <div class="features__panel">
-      
+      <div class="features__panel-icon">
+        <a href="" class="features__panel-link"><img src="img/navigation/SearchFlaticon.svg" alt=""></a>
+      </div>
+      <div class="features__panel-icon">
+        <a href="" class="features__panel-link"><img src="img/navigation/UserFlaticon.svg" alt=""></a>
+      </div>
+      <div class="features__panel-icon">
+        <a href="" class="features__panel-link"><img src="img/navigation/HeartFlaticon.svg" alt=""></a>
+        <div class="features__panel-counter-heart">
+          <span class="features__panel-counter-number">1</span>
+        </div>
+      </div>
+      <div class="features__panel-icon">
+        <a href="" class="features__panel-link"><img src="img/navigation/ShoppingBagFlaticon.svg" alt=""></a>
+        <div class="features__panel-counter-bag">
+          <span class="features__panel-counter-number">1</span>
+        </div>
+      </div>   
 
     </div>
 
   </div>
+</div>
 </div>
 </header>
 
 <!-- header -->
 
 <!-- carousel -->
-<div class="karousel-container">
-  <hr class="karousel-container-line">
 <div class="karousel">
+  <hr class="karousel-line">
+<div class="karousel-container">
 <!--Carousel Wrapper-->
 <section class="section-carousel"> 
 <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
@@ -382,8 +404,11 @@
 
     </div>
 </div>
+
+<div class="popular__button">
+  <button class="popular__button-item">LOAD MORE <img src="img/popular/back_icon.png" alt=""> </button>
+</div>
   
-  <button class="popular__button">LOAD MORE <img src="img/popular/back_icon.png" alt=""> </button>
   
 </section>
 <!-- popular -->
@@ -403,24 +428,29 @@
 <!-- banner -->
 
 <!-- featured products bootstrap4-->
-
 <!--Carousel Wrapper-->
+
 <section class="featured-slide">
-  <div class="featured-slide__title">
-    <div class="featured-slide__title-header">Featured Products</div>
-    <div class="featured-slide__title-text">Unde omnis iste natus error sit voluptatem </div>
-  </div>
+
+
 <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
 
   <!--Controls-->
   <div class="controls-top">
     <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left"></i></a>
-    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i
-        class="fas fa-chevron-right"></i></a>
+    <label for="customRange2">Example range</label>
+    <input type="range" class="custom-range w-25" min="0" max="5" id="customRange2">
+    <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right"></i></a>
   </div>
   <!--/.Controls-->
 
-  
+  <!--Indicators-->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+    <li data-target="#multi-item-example" data-slide-to="1"></li>
+    
+  </ol> -->
+  <!--/.Indicators-->
 
   <!--Slides-->
   <div class="carousel-inner" role="listbox">
@@ -428,44 +458,54 @@
     <!--First slide-->
     <div class="carousel-item active">
 
-      <div class="col-md-4">
-        <div class="card mb-2">
+      <div class="col-md-3" style="float:left">
+       <div class="card mb-2">
           <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
-            alt="Card image cap">
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
           <div class="card-body">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
               card's content.</p>
-            
+            <a class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3" style="float:left">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
-            alt="Card image cap">
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
           <div class="card-body">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
               card's content.</p>
-            
+            <a class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3" style="float:left">
         <div class="card mb-2">
           <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
-            alt="Card image cap">
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
           <div class="card-body">
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
               card's content.</p>
-            
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      
+       <div class="col-md-3" style="float:left">
+       <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
@@ -476,7 +516,7 @@
     <!--Second slide-->
     <div class="carousel-item">
 
-      <div class="col-md-4">
+      <div class="col-md-3" style="float:left">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
@@ -484,12 +524,12 @@
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
               card's content.</p>
-            
+            <a class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3" style="float:left">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
@@ -497,12 +537,12 @@
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
               card's content.</p>
-            
+            <a class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3" style="float:left">
         <div class="card mb-2">
           <img class="card-img-top"
             src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
@@ -510,7 +550,20 @@
             <h4 class="card-title">Card title</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
               card's content.</p>
-            
+            <a class="btn btn-primary">Button</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-3" style="float:left">
+        <div class="card mb-2">
+          <img class="card-img-top"
+            src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</p>
+            <a class="btn btn-primary">Button</a>
           </div>
         </div>
       </div>
@@ -518,50 +571,7 @@
     </div>
     <!--/.Second slide-->
 
-    <!--Third slide-->
-    <div class="carousel-item">
-
-      <div class="col-md-4">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-           
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-           
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card mb-2">
-          <img class="card-img-top"
-            src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg" alt="Card image cap">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-           
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <!--/.Third slide-->
+   
 
   </div>
   <!--/.Slides-->
@@ -569,9 +579,10 @@
 </div>
 </section>
 <!--/.Carousel Wrapper-->
-
-
 <!-- featured products bootstrap4-->
+
+
+
 
 <!-- benefits products -->
 <section class="benefits">
