@@ -137,31 +137,72 @@
   font-size: 13px;
   color: #585d61;
 }
-.product .product-container .product-container__bookmark {
-  width: 100%;
+.product .product-container .content {
   max-width: 1280px;
+  margin: 0px auto;
+  padding: 50px 0px;
+  background: #262a32;
 }
-.product .product-container .product-container__bookmark .nav.nav-tabs {
+.product .product-container .tabs {
+  margin: 0px 0px 50px 0px;
+}
+.product .product-container .tabs__items {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
 }
-.product .product-container .product-container__bookmark .nav.nav-tabs .nav-item {
-  width: 155px;
-  background: #262a32;
-}
-.product .product-container .product-container__bookmark .nav.nav-tabs .nav-item .nav-link {
+.product .product-container .tabs__item {
+  flex: 0 1 33.333%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
-  background: #262a32;
+  text-decoration: none;
 }
-.product .product-container .product-container__bookmark .tab-content .tab-pane.fade {
+.product .product-container .tabs__items span {
+  position: relative;
+  z-index: 2;
+}
+.product .product-container .tabs__block {
+  position: relative;
   display: none;
-  display: flex;
-  color: #fff;
 }
-.product .product-container .product-container__bookmark .tab-content .tab-pane.fade.active.show {
-  display: flex;
+.product .product-container .tabs__block::before {
+  content: "";
+  height: 50px;
+  width: 33.333%;
+  position: absolute;
+  top: -50px;
+}
+.product .product-container .tabs__block:nth-child(1) {
   background: #262a32;
+}
+.product .product-container .tabs__block:nth-child(1):before {
+  background: #262a32;
+  left: 0;
+}
+.product .product-container .tabs__block:nth-child(2) {
+  background: #262a32;
+}
+.product .product-container .tabs__block:nth-child(2):before {
+  background: #262a32;
+  left: 33.333%;
+}
+.product .product-container .tabs__block:nth-child(3) {
+  background: #262a32;
+}
+.product .product-container .tabs__block:nth-child(3):before {
+  background: #262a32;
+  right: 0;
+}
+.product .product-container .tabs__block:target {
+  display: flex;
+}
+.product .product-container .tabs__block-text {
+  padding: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fff;
 }
 
 /*# sourceMappingURL=product.css.map */
