@@ -1750,6 +1750,66 @@ body .footer .footer__container .footer__socials .footer__socials-column .footer
   left: 110px;
 }
 
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: #f1edea;
+}
+
+.forbiden__breadcrumbs-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+  padding: 40px 0px;
+  background: #f1edea;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__breadcrumbs {
+  background: #f1edea;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__breadcrumbs .breadcrumb {
+  background: #f1edea;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__breadcrumbs .breadcrumb .breadcrumb-item .active {
+  color: #45413e;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__breadcrumbs .breadcrumb .breadcrumb-item .active::before {
+  color: #45413e;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__breadcrumbs .breadcrumb .breadcrumb-item .breadcrumb-link {
+  color: #84bc22;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__title {
+  width: 100%;
+  max-width: 1280px;
+  position: relative;
+  margin-bottom: 50px;
+  background: #f1edea;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__title-header {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -25px;
+  left: 315px;
+  font-family: "Lato", sans-serif;
+  font-size: 46px;
+  font-weight: 900;
+  background: #f1edea;
+  color: #45413e;
+  z-index: 2;
+  width: 740px;
+}
+
 .product {
   display: flex;
   justify-content: center;
@@ -1760,7 +1820,6 @@ body .footer .footer__container .footer__socials .footer__socials-column .footer
   width: 100%;
   max-width: 1280px;
   height: 100%;
-  max-height: 960px;
   background: #fff;
 }
 .product .product-container__block {
@@ -1889,72 +1948,57 @@ body .footer .footer__container .footer__socials .footer__socials-column .footer
   font-size: 13px;
   color: #585d61;
 }
-.product .product-container .content {
-  max-width: 1280px;
-  margin: 0px auto;
-  padding: 50px 0px;
-  background: #262a32;
-}
 .product .product-container .tabs {
-  margin: 0px 0px 50px 0px;
+  width: 100%;
+  height: 340px;
+  margin-top: 75px;
 }
-.product .product-container .tabs__items {
-  display: flex;
-}
-.product .product-container .tabs__item {
-  flex: 0 1 33.333%;
-  height: 50px;
+.product .product-container .nav-tabs {
   display: flex;
   justify-content: center;
-  align-items: center;
-  color: #fff;
-  text-decoration: none;
 }
-.product .product-container .tabs__items span {
-  position: relative;
-  z-index: 2;
+.product .product-container .tab-content {
+  width: 100%;
+  height: 270px;
+  background: #1F2530;
 }
-.product .product-container .tabs__block {
-  position: relative;
-  display: none;
+.product .product-container .nav-item {
+  border: 0px solid;
+  border-radius: 15px 15px 0px 0px;
 }
-.product .product-container .tabs__block::before {
-  content: "";
-  height: 50px;
-  width: 33.333%;
-  position: absolute;
-  top: -50px;
-}
-.product .product-container .tabs__block:nth-child(1) {
-  background: #262a32;
-}
-.product .product-container .tabs__block:nth-child(1):before {
-  background: #262a32;
-  left: 0;
-}
-.product .product-container .tabs__block:nth-child(2) {
-  background: #262a32;
-}
-.product .product-container .tabs__block:nth-child(2):before {
-  background: #262a32;
-  left: 33.333%;
-}
-.product .product-container .tabs__block:nth-child(3) {
-  background: #262a32;
-}
-.product .product-container .tabs__block:nth-child(3):before {
-  background: #262a32;
-  right: 0;
-}
-.product .product-container .tabs__block:target {
-  display: flex;
-}
-.product .product-container .tabs__block-text {
-  padding: 20px;
+.product .product-container .nav-link {
   font-family: "Lato", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #bdc3c7;
+  padding: 20px 40px;
+  border: 0px;
+}
+.product .product-container .tab-pane {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
   color: #fff;
+  height: 100%;
+  width: 100%;
+  max-width: 1000px;
+  padding: 70px;
+}
+.product .product-container .nav-link.active {
+  color: #fff;
+  background: #1F2530;
+}
+.product .product-container .tab-pane.tab_01.active {
+  column-count: 2;
+  column-gap: 8rem;
+}
+.product .product-container .tab-pane.tab_02.active {
+  column-count: 1;
+}
+.product .product-container .tab-pane.tab_03.active {
+  column-count: 3;
+  column-gap: 2rem;
 }
 
 /*
