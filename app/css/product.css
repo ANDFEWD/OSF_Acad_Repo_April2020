@@ -1,4 +1,4 @@
-body {
+.product__body {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -208,7 +208,7 @@ body {
 .product .product-container .tab-content {
   width: 100%;
   height: 270px;
-  background: #1F2530;
+  background: #1f2530;
 }
 .product .product-container .nav-item {
   border: 0px solid;
@@ -235,7 +235,7 @@ body {
 }
 .product .product-container .nav-link.active {
   color: #fff;
-  background: #1F2530;
+  background: #1f2530;
 }
 .product .product-container .tab-pane.tab_01.active {
   column-count: 2;

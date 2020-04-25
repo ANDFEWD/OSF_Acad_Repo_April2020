@@ -104,6 +104,7 @@ body {
           width: 80%;
           max-width: 1280px;
         }
+        
 
         .nav {
           // display: flex;
@@ -111,9 +112,13 @@ body {
           padding: 0px;
           top: 62px;
           @include mq($until: tablet) {
+            display: none;
             width: 100%;
             position: absolute;
             left: 0px;
+            z-index: 5;
+
+
           }
 
           @include mq($from: tablet) {
@@ -263,6 +268,8 @@ body {
                   }
                   .nav__submenu-image-item {
                     border-radius: 8px;
+                    width: 100%;
+                    height: 100%;
                     @include mq($until: tablet) {
                       margin-bottom: 10px;
                       width: 70%;
@@ -360,6 +367,15 @@ body {
             }
           }
         }
+
+        .nav--active{
+          @include mq($until: tablet) {
+            display: flex;
+        }
+      }
+
+
+
         .features {
           
           @include mq($until: medium) {
@@ -379,7 +395,7 @@ body {
             padding: 0px 60px;
             max-width: 960px;
             background: $bg-color-body;
-            z-index: 3;
+            z-index: 8;
           }
           // @include mq($until: tablet) {
           //   display: none;
@@ -1361,8 +1377,14 @@ body {
   @include mq($until: tablet) {
     display: block;
     position: absolute;
-    left: 0;
+    left: 40px;
     top: 15px;
     font-size: 1.7rem;
   }
 }
+
+button:active,
+button:focus {
+outline: none !important;
+}
+
