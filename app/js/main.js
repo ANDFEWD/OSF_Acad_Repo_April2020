@@ -1,66 +1,62 @@
-
-
-// $(document).ready(function() {
-//     $('.navbar-toggler').click(function() {
-//       $('.navbar-toggler').removeClass('active');
-//       if ($(this).next('.nav__submenu-contanier').css("display") == "none") {
-//         $('.nav__submenu-contanier').hide('normal');
-//         $(this).next('.nav__submenu-contanier').toggle('normal');
-//         $('.navbar-toggler').removeClass('active');
-//         $(this).toggleClass('active');
-//       } else $('.nav__submenu-contanier').hide('normal');
-//       return false;
-//     });
-//   });
-
 $(document).ready(function() {
   $('.nav__item-button').on('click', function(e){
-    e.preventDefault();
-        if($('.nav__item').not(this).is('.nav__item--active'))
-    {
-        $('.nav__item').removeClass('nav__item--active'); 
+    e.preventDefault();  
+    // console.log($(this));
+    // console.log(this.parent())
+    if ($('.nav__item').not($(this).parent()).is('.nav__item--active')){
+        $('.nav__item').removeClass('nav__item--active');
+       
     }
-    $(this).parent().toggleClass('nav__item--active','switch');
+    $(this).parent().toggleClass('nav__item--active');
+   
 })
 
 
   $('.navbar-toggler').on('click', function(e){
     e.preventDefault();
     
-        if($('.nav').css('display','none'))
-    {
-        $('.nav').css('display','flex')
-    }
-    else 
-    {
-        $('.nav').css('display','none')
-    }
+    $('.nav').toggleClass('nav--active');
     
+    // if($('.nav').css('display','none')){
+    //     $('.nav').css('display','flex');
+    // }
+    // else {
+    //     $('.nav').css('display','none');
+    // }
+    
+})
+
+$('.button-plus').on('click', function(e){
+    e.preventDefault();
+    var parsetext = parseInt($('.features__panel-counter-number-bag').text())+1
+    console.log(parsetext);
+    $('.features__panel-counter-number-bag').text(parsetext);
+
+})
+
+$('.button-heart').on('click', function(e){
+    e.preventDefault();
+    var parsetext = parseInt($('.features__panel-counter-number-heart').text())+1
+    console.log(parsetext);
+    $('.features__panel-counter-number-heart').text(parsetext);
+
 })
 
 
 });
 
-// $("#selectBackground ul li a").click(function(e) {
-//     e.preventDefault();
-//     $("#selectBackground ul li a").removeClass('active');
-//     $(this).addClass('active');
-//   })
+$(document).ready(function () {
 
-// $(document).ready(function() {
-
-//     function func(){
-//         this.className = '--active';
-//     }
-
-//     var listObj = document.querySelectorAll('.block');
-
-//     for (var i=0; i<listObj.length; i++){
-//         listObj[i].onclick = func;
-//     }
-// };
-
-
-//     $('.navbar-toggler').click(function() {
-     
-//   });
+    $('.first-button').on('click', function () {
+  
+      $('.animated-icon1').toggleClass('open');
+    });
+    $('.second-button').on('click', function () {
+  
+      $('.animated-icon2').toggleClass('open');
+    });
+    $('.third-button').on('click', function () {
+  
+      $('.animated-icon3').toggleClass('open');
+    });
+  });
