@@ -318,39 +318,40 @@ $(document).ready(function () {
 
 
 
-  // $(document).ready(function () {
+  $(document).ready(function () {
 
     
    
-      //вешаем плагин на контейнер-картинку
-      //   $(".my-foto-container").imagezoomsl({
+      
+        $(".my-foto-container").imagezoomsl({
 
-      //     descarea: ".big-caption", 				
-		  //     zoomrange: [1.68, 10],
-		  //     zoomstart: 1.68,
-		  //     cursorshadeborder: "10px solid black",
-		  //     magnifiereffectanimate: "fadeIn",	
-      //   });
+          descarea: ".big-caption", 				
+		      zoomrange: [1.68, 10],
+		      zoomstart: 1.68,
+		      cursorshadeborder: "10px solid black",
+		      magnifiereffectanimate: "fadeIn",	
+        });
 	  
-      // //клик по превью-картинке
-      //   $(".my-foto").click(function(){
+      //клик по превью-картинке
+        $(".my-foto").click(function(){
 
-      //      var that = this;
+           var that = this;
 
-      //    //копируем атрибуты из превью-картинки в контейнер-картинку
-      //      $(".my-foto-container").fadeOut(600, function(){
+         //копируем атрибуты из превью-картинки в контейнер-картинку
+           $(".my-foto-container").fadeOut(600, function(){
 
-      //        $(this).attr("src",               $(that).attr("data-large"))              // путь до small картинки
-      //               .attr("data-large",       $(that).attr("data-large"))       // путь до big картинки
+             $(this).attr("src",               $(that).attr("data-large"))              // путь до small картинки
+                    .attr("data-large",       $(that).attr("data-large"))       // путь до big картинки
 					
-      //               //дополнительные атрибуты, если есть
-      //               //.attr("data-title",       $(that).attr("data-title"))       // заголовок подсказки
-      //               //.attr("data-help",        $(that).attr("data-help"))        // текст подсказки    
-      //               //.attr("data-text-bottom", $(that).attr("data-text-bottom")) // текст снизу картинки
+                    //дополнительные атрибуты, если есть
+                    //.attr("data-title",       $(that).attr("data-title"))       // заголовок подсказки
+                    //.attr("data-help",        $(that).attr("data-help"))        // текст подсказки    
+                    //.attr("data-text-bottom", $(that).attr("data-text-bottom")) // текст снизу картинки
                     
-      //               .fadeIn(1000);				
-      //      });
-      //  });	  
+                    .fadeIn(1000);				
+           });
+       });	  
+       });	  
     
 
     //    $(document).ready(function () {
