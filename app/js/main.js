@@ -27,6 +27,34 @@ $(document).ready(function() {
    
 })
 
+  $('.footer__contact-button').on('click', function(e){
+    e.preventDefault();  
+    // console.log($(this));
+    // console.log(this.parent())
+    if (checkWidth < 768) { 
+    $(this).parent().toggleClass('footer__contact-item--active');
+    }
+   
+})
+  $('.footer__categoriest-button').on('click', function(e){
+    e.preventDefault();  
+    // console.log($(this));
+    // console.log(this.parent())
+    if (checkWidth < 768) { 
+    $(this).parent().toggleClass('footer__categoriest--active');
+    }
+   
+})
+  $('.footer__about-button').on('click', function(e){
+    e.preventDefault();  
+    // console.log($(this));
+    // console.log(this.parent())
+    if (checkWidth < 768) { 
+    $(this).parent().toggleClass('footer__about--active');
+    }
+   
+})
+
 //   $('.nav__item-button').on('mouseover', function(e){
 //     e.preventDefault();  
 //     // console.log($(this));
@@ -47,8 +75,49 @@ $('.description-buttons__top-item').on('click', function(e){
  
 })
 
+/////////////////////////////////////////////////////////////////////////////
+ //check to see if the submited cookie is set, if not check if the popup has been closed, if not then display the popup
+ if( getCookie('popupCookie') != 'submited'){ 
+  if(getCookie('popupCookie') != 'closed' ){
+    $('.popup-overlay').delay(10000).css("display", "flex").hide().fadeIn();
+  }
+}
 
+$('a.close').click(function(){
+  $('.popup-overlay').fadeOut();
+  //sets the coookie to one minute if the popup is closed (whole numbers = days)
+  setCookie( 'popupCookie', 'closed', .00069444444 );
+});
 
+$('a.submit').click(function(){
+  $('.popup-overlay').fadeOut();
+  //sets the coookie to five minutes if the popup is submited (whole numbers = days)
+  setCookie( 'popupCookie', 'submited', .0034722222 );
+});
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 //   var navcontanier = $('.nav__submenu-contanier');
 //   var navcontchildren = $('.nav__submenu-contanier').children();
 
@@ -65,7 +134,41 @@ $('.description-buttons__top-item').on('click', function(e){
 // })
 
 //  
-/////////////////////////////////////
+///////////////LOAD MORE//////////////////////
+$('.popular__button-item').on('click', function(e){
+  e.preventDefault(); 
+
+  var html = '';
+  $.ajax({ 
+    type: 'GET', 
+    url: 'popular.json', 
+    dataType: 'json',
+    success: function (data) { 
+        data.forEach(function(item){
+        	html += '<div class="popular__item">'
+                    + '<div class="popular__image">'
+                    + '<img src="' + item.image + '" alt="" class="popular__image-item">'
+                    + '</div>'
+                    + '<div class="popular__discription">'
+                    +   '<h6 class="popular__discription-header">'
+                    +      '<span class="popular__discription-text1">' + item.title + '</span>'
+                    +      '<span class="popular__discription-text1">' + item.description + '</span>'
+                    +    '</h6>'
+                    +    '<div class="popular__discription-footer">'
+                    +      '<span class="popular__discription-price"><i class="fas fa-dollar-sign"></i>' + item.price + '</span>'
+                    +    '</div>'
+                    + '</div>'
+                  + '</div>';
+        });
+        
+        // тут треба пррописати $('popular').append(html);
+        $('.popular__json').append(html);
+    }
+});
+
+ 
+})
+///////////////LOAD MORE//////////////////////
 
 
 
@@ -253,7 +356,7 @@ $(document).ready(function () {
     //    $(document).ready(function () {
     //    function postsCarousel() {
     //     var checkWidth = $(window).width();
-    //     var owlPost = $(".product-container__galery");
+    //     var owlPost = $(".popular");
     //     if (checkWidth > 767) {
     //       if(typeof owlPost.data('owl.carousel') != 'undefined'){
     //         owlPost.data('owl.carousel').destroy(); 
@@ -279,6 +382,9 @@ $(document).ready(function () {
     //   postsCarousel();
     //   $(window).resize(postsCarousel);   
     // });   
+
+
+
 // jQuery(function(){
 
 // 	$(".container").imagezoomsl({ 
