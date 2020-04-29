@@ -26,6 +26,11 @@
   font-weight: 500;
   margin-bottom: 2rem;
 }
+@media (max-width: 47.99em) {
+  .forbiden__breadcrumbs-wrapper .forbiden__breadcrumbs .breadcrumb {
+    margin-bottom: 0px;
+  }
+}
 .forbiden__breadcrumbs-wrapper .forbiden__breadcrumbs .breadcrumb .breadcrumb-item .active {
   color: #45413e;
 }
@@ -37,25 +42,33 @@
 }
 .forbiden__breadcrumbs-wrapper .forbiden__title {
   width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
   max-width: 1280px;
-  position: relative;
   margin-bottom: 50px;
   background: #f1edea;
 }
+@media (max-width: 47.99em) {
+  .forbiden__breadcrumbs-wrapper .forbiden__title {
+    margin-bottom: 0px;
+  }
+}
 .forbiden__breadcrumbs-wrapper .forbiden__title-header {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  top: -25px;
-  left: 315px;
   font-family: "Lato", sans-serif;
-  font-size: 46px;
+  font-size: 40px;
   font-weight: 900;
   background: #f1edea;
   color: #45413e;
-  z-index: 2;
-  width: 740px;
+  width: 1950px;
+}
+.forbiden__breadcrumbs-wrapper .forbiden__title-line {
+  border-bottom: 1px solid;
+  border-color: #e5e2df;
+  width: 100%;
 }
 
 .product {
@@ -77,9 +90,24 @@
   background: #fff;
 }
 .product .product-container__block .product-container__galery {
-  width: 700px;
+  display: flex;
+  max-width: 700px;
   height: 535px;
-  background: #dfeb7a;
+  min-width: 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.product .product-container__block .product-container__galery .my-foto-container {
+  max-width: 580px;
+  height: 530px;
+}
+.product .product-container__block .product-container__galery .my-foto__block {
+  display: flex;
+  flex-flow: column;
+}
+.product .product-container__block .product-container__galery .my-foto__block .my-foto {
+  max-width: 75px;
+  max-height: 75px;
 }
 .product .product-container__block .product-container__description {
   display: flex;
@@ -106,6 +134,7 @@
 .product .product-container__block .product-container__description-buttons .description-buttons__top {
   width: 155px;
   height: 40px;
+  position: relative;
 }
 .product .product-container__block .product-container__description-buttons .description-buttons__top-item {
   border: 2px solid;
@@ -135,6 +164,45 @@
 }
 .product .product-container__block .product-container__description-buttons .description-buttons__top-item .fa {
   color: #e8e2d6;
+}
+.product .product-container__block .product-container__description-buttons .description-buttons__top .product-container__description-list {
+  display: none;
+  position: absolute;
+  left: 0;
+  flex-flow: column;
+  width: 145px;
+  padding: 0;
+  margin-left: 0;
+  z-index: 3;
+  background: #fff;
+  border: 2px solid;
+  border-color: #e8e2d6;
+  border-radius: 25px;
+}
+.product .product-container__block .product-container__description-buttons .description-buttons__top .product-container__description-list .product-container-element {
+  display: flex;
+  width: 100%;
+  padding-left: 10px;
+}
+.product .product-container__block .product-container__description-buttons .description-buttons__top .product-container__description-list .product-container-element a {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.product .product-container__block .product-container__description-buttons .description-buttons__top .product-container__description-list .product-container-element a .description-buttons__top-item-circle.aquamarine {
+  background: aquamarine;
+  margin: 6px;
+}
+.product .product-container__block .product-container__description-buttons .description-buttons__top .product-container__description-list .product-container-element a .description-buttons__top-item-circle.chocolate {
+  background: chocolate;
+  margin: 6px;
+}
+.product .product-container__block .product-container__description-buttons .description-buttons__top .product-container__description-list .product-container-element a .description-buttons__top-item-circle.darkviolet {
+  background: darkviolet;
+  margin: 6px;
+}
+.product .product-container__block .product-container__description-buttons .description-buttons__top--active .product-container__description-list {
+  display: flex;
 }
 .product .product-container__block .product-container__description-buttons .description-buttons__bottom {
   width: 320px;

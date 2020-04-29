@@ -24,6 +24,9 @@
 
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="js/zoomsl-3.0.js"></script>
   
   <link rel="stylesheet" href="css/main.css">
 
@@ -59,7 +62,7 @@
         <div class="nav__submenu-contanier">
           <ul class="nav__submenu">
             
-          <li class="nav__submenu-item">
+          <li class="nav__submenu-item item-product">
             <button class="nav__submenu-item-button">PRODUCT CATEGORIES <i class="fa fa-caret-down"></i></button>
             <ul class="submenu__product">
               <li class="nav__submenu-item-link"><a class="submenu-link-href" href="#"></li> Accessories </a> </li>      
@@ -89,7 +92,7 @@
              </ul>
           </li>
 
-          <li class="nav__submenu-item">
+          <li class="nav__submenu-item item-sale">
            
             <button class="nav__submenu-item-button">SALE <i class="fa fa-caret-down"></i></button>
             <ul class="submenu__sale">
@@ -280,18 +283,33 @@
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/carousel/carousel_item1_red.png"
          alt="First slide">
+         <div class="carousel-item__description des-block1">
+           <h4 class="carousel__description-header">Control and manage any device with cloud solutions</h4>
+           <span class="carousel__description-text">Improve business performance and the user experience with the right mix of IoT technology and processes </span>
+           <button class="carousel__description-button">VIEW MORE</button>
+         </div>
     </div> 
     <!--/First slide -->
     <!--Second slide-->
     <div class="carousel-item">
       <img class="d-block w-100" src="img/carousel/carousel_item2_red.png"
         alt="Second slide">
+        <div class="carousel-item__description des-block2">
+          <h4 class="carousel__description-header">Control and manage any device with cloud solutions</h4>
+          <span class="carousel__description-text">Improve business performance and the user experience with the right mix of IoT technology and processes </span>
+          <button class="carousel__description-button">VIEW MORE</button>
+        </div>
     </div>
     <!--/Second slide-->
     <!--Third slide-->
     <div class="carousel-item">
       <img class="d-block w-100" src="img/carousel/carousel_item3_red.png"
         alt="Third slide">
+        <div class="carousel-item__description des-block3">
+          <h4 class="carousel__description-header">Control and manage any device with cloud solutions</h4>
+          <span class="carousel__description-text">Improve business performance and the user experience with the right mix of IoT technology and processes </span>
+          <button class="carousel__description-button">VIEW MORE</button>
+        </div>
     </div>
     <!--/Third slide-->
    </div> 
@@ -360,16 +378,20 @@
   </div>
 
   <div class="popular__item">
+    <a href="#">
     <div class="popular__image">
       <img src="img/popular/Layer_152_1.png" alt="" class="popular__image-item">
     </div>
+  </a>
     <div class="popular__discription">
+      <a href="#">
       <h6 class="popular__discription-header">
         <span class="popular__discription-text1">Hay - About A Lounge</span>
         <span class="popular__discription-text1">Chair AAL 93</span>
       </h6>
+    </a>
       <div class="popular__discription-footer-buy">
-        <span class="popular__discription-footer-buy-price"><i class="fas fa-dollar-sign"></i> 659.55</span>
+        <a href="#"><span class="popular__discription-footer-buy-price"><i class="fas fa-dollar-sign"></i> 659.55</span></a>
         <button class="popular__discription-footer-buy-button">BUY NOW</button>
       </div>      
     </div>
@@ -380,6 +402,7 @@
     </div>  -->
 
   </div>
+
 
   <div class="popular__item">
     <div class="popular__image">
@@ -811,7 +834,7 @@
 
 <!-- modal form -->
 
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<form class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -822,20 +845,26 @@
         </button>
       </div>
       <div class="modal-body mx-3">
-        <div class="md-form mb-5">
+        <div class="md-form form-group mb-5">
           <!-- <i class="fas fa-envelope prefix grey-text"></i> -->
           <span class="form-control-text">E-mail</span>
-          <input type="email" id="defaultForm-email" class="form-control validate" >
-          <!-- <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label> -->
+          <input type="email"  name="email" class="form-control" >
+          <!-- <label data-error="wrong" data-success="right" for="defaultForm-email">Email</label> id="defaultForm-email"-->
         </div>
 
-        <div class="md-form mb-4">
+        <div class="md-form form-group mb-4">
           <!-- <i class="fas fa-lock prefix grey-text"></i> -->
-          <div class="form-control-password">
+        <div class="form-control-password">
           <span class="form-control-text">Password</span>
           <a class="form-control-passrestore waves-effect waves-light">forgot password</a>
         </div>
-          <input type="password" id="defaultForm-pass" class="form-control validate" >
+          <input type="password" id="password" name="password" class="form-control" >
+          <a href="" class="password-control">
+            <!-- <svg class="password-control-svg" xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" xml:space="preserve"><g>
+              <path d="M28.8,91.7c9.7,9.7,22.5,14.6,35.2,14.6s25.5-4.9,35.2-14.6L126.9,64L99.2,36.3c-19.4-19.4-51.1-19.4-70.5,0L1.1,64   L28.8,91.7z M34.2,41.7c16.4-16.4,43.2-16.4,59.6,0L116.1,64L93.8,86.3c-16.4,16.4-43.2,16.4-59.6,0L11.9,64L34.2,41.7z"/>
+              <path d="M64,85c11.6,0,21-9.4,21-21s-9.4-21-21-21v8c7.2,0,13,5.8,13,13s-5.8,13-13,13s-13-5.8-13-13h-8C43,75.6,52.4,85,64,85z"/></g></svg> -->
+          </a>
           <!-- <label data-error="wrong" data-success="right" for="defaultForm-pass">Password</label> -->
         </div>
 
@@ -846,7 +875,7 @@
       </div>
     </div>
   </div>
-</div>
+</form>
 
 <!-- <div class="text-center">
   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
@@ -854,6 +883,41 @@
 </div> -->
 
 <!-- modal form -->
+<!-- cookie form -->
+<!-- Button trigger modal-->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCookie1">Cookies</button>
+
+<!--Modal: modalCookie-->
+<div class="modal fade bottom" id="modalCookie1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" data-backdrop="true">
+  <div class="modal-dialog modal-frame modal-bottom modal-notify modal-info" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Body-->
+      <div class="modal-body">
+        <div class="row d-flex justify-content-center align-items-center">
+
+          <h5 class="pt-3 pr-2">This website uses cookies.
+          </h5>
+          <p class="pt-3 pr-2">OSF uses its own and third-party cookies for statistical purposes, to know your prefereces, for website 
+            perfomance and interaction with social media offering publicity tailored to your interests. If you continue browsing,
+            we consider that you accept its use.
+          </p>
+          <p class="pt-3 pr-2">You can expand this information consulting our <a href="#">Cookie Policy Page</a>.
+          </p>
+
+          <a type="button" class="btn btn-primary">Learn more <i class="fas fa-book ml-1"></i></a>
+          <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Ok, thanks</a>
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalCookie-->
+<!-- cookie form -->
+
+
 
 
 
@@ -868,8 +932,16 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="js/mdb.min.js"></script>
 
-<script src="js/jquery.min.js"></script>
+
+
+<!-- <script src="js/jquery.min.js"></script> -->
+
 <script src="js/owlcarousel/owl.carousel.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+
+<script src="js/slick.min.js"></script>
 
 <script src='js/main.js'></script>
  <!-- <script src="app.js"></script>  -->

@@ -167,7 +167,7 @@ body {
 
               .nav__submenu-contanier {
                 @include mq($until: tablet) {
-                  display: flex;
+                  display: none;
                   flex-flow: column;
                 }
                 @include mq($from: tablet) {
@@ -211,6 +211,9 @@ body {
                     }
 
                     .submenu__product {
+                      @include mq($until: tablet) {
+                        display: none;
+                      }
                       text-decoration: none;
                       list-style-type: none;
                       justify-content: center;
@@ -228,7 +231,13 @@ body {
                         line-height: 2.8em;
                       }
                     }
+
+                    
+
                     .submenu__sale {
+                      @include mq($until: tablet) {
+                        display: none;
+                      }
                       text-decoration: none;
                       list-style-type: none;
                       justify-content: center;
@@ -243,6 +252,52 @@ body {
                       //   padding: 0px;
                       //   margin-top: 3px;
                       //   margin-bottom: 3px;
+                      // }
+                    }
+                  }
+                  .nav__submenu-item.item-sale.nav__submenu-item--active{
+                    .submenu__sale {
+                      @include mq($until: tablet) {
+                        display: block;
+                      }
+                      text-decoration: none;
+                      list-style-type: none;
+                      justify-content: center;
+                      padding: 0px;
+                      margin-left: 20px;
+                      // margin-left: 30px;
+                      @include mq($from: tablet) {
+                        margin-left: 0px;
+                        margin-top: 15px;
+                      }
+                      // .nav__submenu-item-link {
+                      //   padding: 0px;
+                      //   margin-top: 3px;
+                      //   margin-bottom: 3px;
+                      // }
+                    }
+                  }
+
+                  .nav__submenu-item.item-product.nav__submenu-item--active{
+                    .submenu__product {
+                      @include mq($until: tablet) {
+                        display: block;
+                      }
+                      text-decoration: none;
+                      list-style-type: none;
+                      justify-content: center;
+                      padding: 0px;
+                      margin-left: 20px;
+                      @include mq($from: tablet) {
+                        margin-left: 0px;
+                        column-count: 3;
+                        column-gap: 130px;
+                        margin-top: 15px;
+                      }
+
+                      // .nav__submenu-item-link {
+                      //   padding: 0px;
+                      //   line-height: 2.8em;
                       // }
                     }
                   }
@@ -279,7 +334,18 @@ body {
                     }
                   }
                 }
+
+                &:hover {
+                  @include mq($until: tablet) {
+                    display: flex;
+                    flex-flow: column;
+                  }
+                  display: flex;
+                  background-color: $bg-color-body;
+                  z-index: 50;
+                }
               }
+
               .nav__item-button {
                 display: flex;
                 justify-content: center;
@@ -322,7 +388,27 @@ body {
                 //   border-bottom: thick;
                 //   border-color: $nav-border-color;
                 // }
+                @include mq($from: tablet) {
+                &:hover + .nav__submenu-contanier {
+                  @include mq($until: tablet) {
+                    display: flex;
+                    flex-flow: column;
+                  }
+                  display: flex;
+                  background-color: $bg-color-body;
+                  z-index: 50;
+                }
               }
+                &:hover {
+                  @include mq($from: tablet) {
+                    background-color: $bg-color-body;
+                    color: $color-body;
+                    border-bottom: 3px solid;
+                    border-bottom-color: $nav-border-color;
+                  }
+                }
+              }
+
               .nav__submenu-item-button {
                 border: none;
                 outline: none;
@@ -547,6 +633,13 @@ body {
                     display: none;
                   }
                 }
+
+                @include mq($from: medium) {
+                &:hover + .features__lang-list {
+                  
+                  display: flex;
+                  }
+                }
               }
 
               .features__lang-list {
@@ -592,8 +685,29 @@ body {
                     color: #5f5c59;
                   }
                 }
+
+                &:hover {
+                  display: flex;
+                }
               }
             }
+
+            // .features__button-lang:hover{
+
+            //     .features__lang-list {
+            //       display: flex;
+            //     }
+
+            // }
+
+            // .features__button-currency:hover{
+
+            //     .features__currency-list {
+            //       display: flex;
+            //     }
+
+            // }
+
             .features__lang.features__lang--active {
               .features__lang-list {
                 display: flex;
@@ -640,6 +754,13 @@ body {
                   display: block;
                   @include mq($until: medium) {
                     display: none;
+                  }
+                }
+
+                @include mq($from: medium) {
+                &:hover + .features__currency-list {
+                 
+                  display: flex;
                   }
                 }
               }
@@ -696,6 +817,9 @@ body {
                     font-size: 14px;
                     color: #5f5c59;
                   }
+                }
+                &:hover {
+                  display: flex;
                 }
               }
             }
@@ -885,11 +1009,12 @@ body {
           margin-right: 5px;
         }
 
-        .carousel.slide.carousel-fade.pointer-event {
+        .carousel.slide.carousel-fade {
           height: 100%;
           .carousel-inner {
             height: 100%;
             .carousel-item {
+              position: relative;
               height: 100%;
             }
             .carousel-item.active {
@@ -919,6 +1044,127 @@ body {
           @include mq($from: tablet) {
             border-radius: 8px;
             height: 470px;
+          }
+        }
+
+        .carousel-item__description {
+          @include mq($until: tablet) {
+            margin: 10px;
+            justify-content: space-between;
+            align-items: center;
+            }
+            @include mq($from: tablet) {
+              @include mq($until: medium) {
+                max-width: 500px;
+                margin-left: 5px;
+                margin-right: 0px;
+              }
+              }
+          position: absolute;
+          z-index: 10;
+          display: flex;
+          flex-flow: column;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          justify-content: space-between;
+          max-width: 820px;
+          max-height: 330px;
+          margin: 80px 60px;
+          margin-right: 10px;
+          .carousel__description-header {
+            @include mq($until: tablet) {
+            font-size: 28px;
+            }
+            font-family: $text-primary-family;
+            font-weight: 600;
+            font-size: 40px;
+            color: $color-body;
+            max-width: 560px;
+            max-height: 100px;
+          }
+          .carousel__description-text {
+            @include mq($until: tablet) {
+              font-size: 9px;
+              max-width: 260px;
+              }
+            font-family: $text-primary-family;
+            font-weight: 500;
+            font-size: 12px;
+            color: $color-body;
+            max-width: 340px;
+            max-height: 40px;
+          }
+          .carousel__description-button {
+            font-family: $text-primary-family;
+            font-weight: 400;
+            font-size: 14px;
+            color: $color-body;
+            width: 150px;
+            height: 40px;
+            margin: 40px 10px;
+            border: 1px solid;
+            border-radius: 25px;
+            background: rgb(255, 255, 255, 0);
+            &:hover {
+              background: rgb(255, 255, 255, 0.4);
+            }
+          }
+        }
+
+        .carousel-item__description.des-block1 {
+          align-items: flex-start;
+          @include mq($until: tablet) {
+            align-items: center;
+          }
+          .carousel__description-header {
+            text-align: left;
+            @include mq($until: tablet) {
+              text-align: center;
+            }
+          }
+          .carousel__description-text {
+            text-align: left;
+            @include mq($until: tablet) {
+              text-align: center;
+            }
+          }
+        }
+        .carousel-item__description.des-block2 {
+          align-items: center;
+          @include mq($until: tablet) {
+            align-items: center;
+          }
+          .carousel__description-header {
+            text-align: center;
+            @include mq($until: tablet) {
+              text-align: center;
+            }
+          }
+          .carousel__description-text {
+            text-align: center;
+            @include mq($until: tablet) {
+              text-align: center;
+            }
+          }
+        }
+        .carousel-item__description.des-block3 {
+          align-items: flex-end;
+          @include mq($until: tablet) {
+            align-items: center;
+          }
+          .carousel__description-header {
+            text-align: right;
+            @include mq($until: tablet) {
+              text-align: center;
+            }
+          }
+          .carousel__description-text {
+            text-align: right;
+            @include mq($until: tablet) {
+              text-align: center;
+            }
           }
         }
       }
@@ -1585,9 +1831,17 @@ body {
           .footer__contact-email {
             width: 100%;
             margin: 20px 0px;
+            color: $line-color;
+            &:hover {
+              color: $footer-link-color;
+            }
           }
           .footer__contact-phone {
             width: 100%;
+            color: $line-color;
+            &:hover {
+              color: $footer-link-color;
+            }
           }
         }
       }
@@ -1673,6 +1927,9 @@ body {
           padding: 40px 0px;
           .footer__socials-icon {
             color: $footer-link-color;
+            &:hover {
+              color: $line-color;
+            }
             .footer__facebook_icon {
               color: $popular-item-bg;
             }
@@ -1686,6 +1943,9 @@ body {
 .footer__link {
   color: $footer-link-color;
   text-decoration: none;
+  &:hover {
+    color: $line-color;
+  }
 }
 
 .navbar-toggler {
@@ -1886,6 +2146,9 @@ button:focus {
 
 .submenu-link-href {
   color: $color-body;
+  &:hover {
+    color: $line-color;
+  }
 }
 
 .modal-content {
@@ -1894,8 +2157,8 @@ button:focus {
   padding: 50px;
   border-radius: 8px;
   .modal-body {
-    padding: 0!important;
-    margin: 0!important;
+    padding: 0 !important;
+    margin: 0 !important;
     .md-form {
       margin: 15px 0px !important;
       height: 80px;
@@ -1913,9 +2176,11 @@ button:focus {
         }
       }
       .form-control {
+        position: relative;
         border: 2px solid;
         border-radius: 20px;
         border-color: #d6d6d6;
+        padding: 9.6px 10px 6.4px 10px;
         &-text {
           padding: 10px;
           font-family: $text-primary-family;
@@ -1931,7 +2196,7 @@ button:focus {
     border: 0px;
   }
   .modal-footer {
-    display: flex!important;
+    display: flex !important;
     flex-flow: column;
     border: 0px;
     .btn {
@@ -1950,3 +2215,55 @@ button:focus {
     }
   }
 }
+
+// .modal-dialog.modal-frame.modal-bottom.modal-notify.modal-info{
+//   width: 1170px;
+//   height: 150px;
+// }
+
+// .password {
+// 	position: relative;
+// }
+.password-control {
+  position: absolute;
+  top: 54px;
+  right: 15px;
+  display: inline-block;
+  width: 25px;
+  height: 20px;
+  background: url(../img/iconfinder__eye_watch_view_impression_look_vision_biometric_4213415.svg)
+    0 0 no-repeat;
+}
+.password-control.view {
+  background: url(../img/iconfinder_Eye_Off_4781836.svg) 0 0 no-repeat;
+}
+
+#password-error,
+#email-error {
+  // right: -50px;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: red;
+  max-width: 500px;
+  top: 77px;
+  left: -40px;
+  font-size: 10px;
+  font-weight: 500;
+}
+#password-error.error.active {
+  transform: translateY(10px);
+}
+#email-error.error.active {
+  transform: translateY(10px);
+}
+// .error.active{
+//   right: -50px;
+//   overflow: visible;
+//   display: flex;
+//   color: red;
+//   max-width: 500px;
+//   top: 97px;
+//   left: 0;
+// }

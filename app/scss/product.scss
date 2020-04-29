@@ -27,6 +27,9 @@
       font-size: 18px;
       font-weight: 500;
       margin-bottom: 2rem;
+      @include mq($until: tablet) {
+        margin-bottom: 0px;
+      }
       .breadcrumb-item .active {
         color: #45413e;
         &::before {
@@ -43,24 +46,30 @@
 
   .forbiden__title {
     width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
     max-width: 1280px;
-    position: relative;
     margin-bottom: 50px;
     background: #f1edea;
+    @include mq($until: tablet) {
+      margin-bottom: 0px;
+    }
     &-header {
-      position: absolute;
       display: flex;
       align-items: center;
       justify-content: center;
-      top: -25px;
-      left: 315px;
       font-family: $text-primary-family;
-      font-size: 46px;
+      font-size: 40px;
       font-weight: 900;
       background: #f1edea;
       color: #45413e;
-      z-index: 2;
-      width: 740px;
+      width: 1950px;
+    }
+    &-line {
+      border-bottom: 1px solid;
+      border-color: #e5e2df;
+      width: 100%;
     }
   }
 }
@@ -81,11 +90,32 @@
       flex-flow: row;
       width: 100%;
       background: $color-body;
+      ///////////////////////////////////////////////////////////////////////////////////////
       .product-container__galery {
-        width: 700px;
+        display: flex;
+        // flex-flow: row;
+        max-width: 700px;
         height: 535px;
-        background: rgb(223, 235, 122);
+        // max-width: 700px;
+        // max-height: 535px;
+        min-width: 0;
+        justify-content: space-between;
+        align-items: center;
+        .my-foto-container {
+          max-width: 580px;
+          height: 530px;
+        }
+        .my-foto__block {
+          display: flex;
+          flex-flow: column;
+          .my-foto {
+            max-width: 75px;
+            max-height: 75px;
+          }
+        }
+        // background: rgb(223, 235, 122);
       }
+      ///////////////////////////////////////////////////////////////////////////////////////
       .product-container__description {
         display: flex;
         flex-flow: column;
@@ -110,6 +140,7 @@
           .description-buttons__top {
             width: 155px;
             height: 40px;
+            position: relative;
             &-item {
               border: 2px solid;
               border-color: #e8e2d6;
@@ -139,7 +170,52 @@
                 color: #e8e2d6;
               }
             }
+            .product-container__description-list {
+              display: none;
+              position: absolute;
+              left: 0;
+              flex-flow: column;
+              width: 145px;
+              padding: 0;
+              margin-left: 0;
+              z-index: 3;
+              background: $color-body;
+              border: 2px solid;
+              border-color: #e8e2d6;
+              border-radius: 25px;
+              .product-container-element {
+                display: flex;
+                // justify-content: space-evenly;
+                width: 100%;
+                padding-left: 10px;
+                a {
+                  display: flex;
+                  justify-content: space-evenly;
+                  // width: 100%;
+                  align-items: center;
+
+                  .description-buttons__top-item-circle.aquamarine {
+                    background: aquamarine;
+                    margin: 6px;
+                  }
+                  .description-buttons__top-item-circle.chocolate {
+                    background: chocolate;
+                    margin: 6px;
+                  }
+                  .description-buttons__top-item-circle.darkviolet {
+                    background: darkviolet;
+                    margin: 6px;
+                  }
+                }
+              }
+            }
           }
+          .description-buttons__top--active {
+            .product-container__description-list {
+              display: flex;
+            }
+          }
+
           .description-buttons__bottom {
             width: 320px;
             height: 40px;
@@ -246,9 +322,9 @@
 
     .nav-link.active {
       color: #fff;
-      .tab-pane:nth-child(1) {}
-        background: #1f2530;
-      
+      .tab-pane:nth-child(1) {
+      }
+      background: #1f2530;
     }
 
     .tab-pane.tab_01.active {
@@ -262,118 +338,87 @@
       column-count: 3;
       column-gap: 2rem;
     }
-
-    // .product-container__bookmark {
-    //   width: 100%;
-    //   max-width: 1280px;
-    //   .nav.nav-tabs {
-    //     display: flex;
-    //     justify-content: space-evenly;
-    //     width: 100%;
-    //     .nav-item {
-    //       width: 100%;
-    //       max-width: 160px;
-    //       height: 50px;
-    //       border: 0px solid;
-    //       border-radius: 15px 15px 0px 0px;
-    //       background: $bg-color-body;
-    //       .nav-link {
-    //         color: $color-body;
-    //         background: $bg-color-body;
-    //         border: 0px solid;
-    //       }
-    //     }
-    //   }
-    //   .tab-content {
-    //     display: flex;
-    //     flex-flow: column;
-    //     background:$bg-color-body;
-    //     width: 100%;
-    //     .tab-pane.fade {
-    //       display: none;
-    //       display: flex;
-    //       color: $color-body;
-    //     }
-    //     .tab-pane.fade.active.show{
-    //       display: flex;
-    //       background: $bg-color-body;
-
-    //     }
-    //   }
-    // }
-
-    // .content {
-    //   max-width: 1280px;
-    //   margin: 0px auto;
-    //   padding: 50px 0px;
-    //   background: $bg-color-body;
-    // }
-    // .tabs {
-    //   margin: 0px 0px 50px 0px;
-    // }
-    // .tabs__items {
-    //   display: flex;
-    // }
-    // .tabs__item {
-    //   flex: 0 1 33.333%;
-    //   height: 50px;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   color: #fff;
-    //   text-decoration: none;
-    // }
-    // .tabs__items span{
-    //   position: relative;
-    //   z-index: 2;
-    // }
-
-    // .tabs__body {
-    // }
-    // .tabs__block {
-    //   position: relative;
-    //   display: none;
-    // }
-    // .tabs__block::before {
-    //   content: "";
-    //   height: 50px;
-    //   width: 33.333%;
-    //   position: absolute;
-    //   top: -50px;
-    // }
-
-    // .tabs__block:nth-child(1){
-    //   background: $bg-color-body;
-    // }
-    // .tabs__block:nth-child(1):before{
-    //   background: $bg-color-body;
-    //   left: 0;
-    // }
-    // .tabs__block:nth-child(2){
-    //   background: $bg-color-body;
-    // }
-    // .tabs__block:nth-child(2):before{
-    //   background: $bg-color-body;
-    //   left: 33.333%;
-    // }
-    // .tabs__block:nth-child(3){
-    //   background: $bg-color-body;
-    // }
-    // .tabs__block:nth-child(3):before{
-    //   background: $bg-color-body;
-    //   right: 0;
-    // }
-
-    // .tabs__block:target {
-    //   display: flex;
-    // }
-    // .tabs__block-text {
-
-    //   padding: 20px;
-    //   font-family: $text-primary-family;
-    //   font-weight: 500;
-    //   font-size: 14px;
-    //   color: #fff;
-    // }
   }
 }
+
+// .slider {
+//   min-width: 0;
+// }
+// /* Слайдер */
+// .slick-slider {
+// }
+// /* Слайдер запущен */
+// .slick-slider.slick-initialized {
+// }
+// /* Слайдер с точками */
+// .slick-slider.slick-dotted {
+// }
+// /* Ограничивающая оболочка */
+// .slick-list {
+//   overflow: hidden;
+// }
+// /* Лента слайдов */
+
+// .slick-track {
+//   display: flex;
+//   flex-flow: column;
+//   align-items: flex-start;
+// }
+
+// /* Слайд */
+// .slick-slide {
+// }
+// /* Слайд активный (показывается) */
+// .slick-slide.slick-active {
+// }
+// /* Слайд основной */
+// .slick-slide.slick-current {
+// }
+// /* Слайд по центру */
+// .slick-slide.slick-center {
+// }
+// /* Клонированный слайд */
+// .slick-slide.slick-cloned {
+// }
+// /* Стрелка */
+// .slick-arrow {
+// }
+// /* Стрелка влево */
+// .slick-arrow.slick-prev {
+// }
+// /* Стрелка вправо */
+// .slick-arrow.slick-next {
+// }
+// /* Стрелка не активная */
+// .slick-arrow.slick-disabled {
+// }
+// /* Точки (булиты) */
+// .slick-dots {
+// }
+// .slick-dots li {
+// }
+// /* Активная точка */
+// .slick-dots li.slick-active {
+// }
+// /* Элемент точки */
+// .slick-dots li button {
+// }
+
+// .slider {
+//   .slick-list {
+//     .slick-track {
+//       display: flex;
+//       flex-flow: column;
+//       align-items: flex-start;
+//     }
+//   }
+// }
+
+// .sliderbig {
+//   .slick-list {
+//     .slick-track {
+//       display: flex;
+//       align-items: flex-start;
+//     }
+//   }
+// }
