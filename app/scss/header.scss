@@ -1787,7 +1787,10 @@ body {
       justify-content: center;
       align-items: center;
       &-triangular {
-        flex-flow: row-reverse;
+        @include mq($until: tablet) {
+          flex-flow: row-reverse;
+        }
+        
       }
 
       &-image {

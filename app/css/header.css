@@ -1624,8 +1624,10 @@ body .benefits__column {
   justify-content: center;
   align-items: center;
 }
-body .benefits__column-triangular {
-  flex-flow: row-reverse;
+@media (max-width: 47.99em) {
+  body .benefits__column-triangular {
+    flex-flow: row-reverse;
+  }
 }
 body .benefits__column-image {
   height: 100%;
