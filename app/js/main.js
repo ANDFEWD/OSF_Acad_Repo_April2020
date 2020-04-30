@@ -318,71 +318,10 @@ $(document).ready(function () {
 
 
 
-  $(document).ready(function () {
-
+ 	  
     
-   
+
       
-        $(".my-foto-container").imagezoomsl({
-
-          descarea: ".big-caption", 				
-		      zoomrange: [1.68, 10],
-		      zoomstart: 1.68,
-		      cursorshadeborder: "10px solid black",
-		      magnifiereffectanimate: "fadeIn",	
-        });
-	  
-      //клик по превью-картинке
-        $(".my-foto").click(function(){
-
-           var that = this;
-
-         //копируем атрибуты из превью-картинки в контейнер-картинку
-           $(".my-foto-container").fadeOut(600, function(){
-
-             $(this).attr("src",               $(that).attr("data-large"))              // путь до small картинки
-                    .attr("data-large",       $(that).attr("data-large"))       // путь до big картинки
-					
-                    //дополнительные атрибуты, если есть
-                    //.attr("data-title",       $(that).attr("data-title"))       // заголовок подсказки
-                    //.attr("data-help",        $(that).attr("data-help"))        // текст подсказки    
-                    //.attr("data-text-bottom", $(that).attr("data-text-bottom")) // текст снизу картинки
-                    
-                    .fadeIn(1000);				
-           });
-       });	  
-       });	  
-    
-
-    //    $(document).ready(function () {
-    //    function postsCarousel() {
-    //     var checkWidth = $(window).width();
-    //     var owlPost = $(".popular");
-    //     if (checkWidth > 767) {
-    //       if(typeof owlPost.data('owl.carousel') != 'undefined'){
-    //         owlPost.data('owl.carousel').destroy(); 
-    //       }
-    //       owlPost.removeClass('owl-carousel');
-    //     } else if (checkWidth < 768) {
-    //       owlPost.addClass('owl-carousel');
-    //       owlPost.owlCarousel({
-    //         items : 1,
-    //         slideSpeed : 500,
-    //         animateOut: 'fadeOut',
-    //         touchDrag: false,
-    //         mouseDrag: false,
-    //         autoplay: true,
-    //         autoplaySpeed: 8000,
-    //         autoplayTimeout: 8000,
-    //         dots: true,
-    //         loop: true
-    //       });
-    //     }
-    //   }
-    
-    //   postsCarousel();
-    //   $(window).resize(postsCarousel);   
-    // });   
 
 
 
@@ -519,3 +458,75 @@ $('body').on('click', '.password-control', function(){
 	return false;
 });
 });
+
+
+$(document).ready(function () {
+  function postsCarousel() {
+   var checkWidth = $(window).width();
+   var owlPost = $(".popular__wrapper");
+   if (checkWidth > 767) {
+     if(typeof owlPost.data('owl.carousel') != 'undefined'){
+       owlPost.data('owl.carousel').destroy(); 
+     }
+     owlPost.removeClass('owl-carousel');
+   } else if (checkWidth < 768) {
+     owlPost.addClass('owl-carousel');
+     owlPost.owlCarousel({
+       items : 1,
+       slideSpeed : 500,
+       animateOut: 'fadeOut',
+       touchDrag: true,
+       mouseDrag: true,
+       autoplay: true,
+       autoplaySpeed: 8000,
+       autoplayTimeout: 8000,
+       dots: true,
+       loop: true
+     });
+   }
+ }
+
+ postsCarousel();
+ $(window).resize(postsCarousel);   
+}); 
+
+
+
+
+
+
+
+$(document).ready(function () {
+
+    
+   
+      
+  $(".my-foto-container").imagezoomsl({
+
+    descarea: ".big-caption", 				
+    zoomrange: [1.68, 10],
+    zoomstart: 1.68,
+    cursorshadeborder: "10px solid black",
+    magnifiereffectanimate: "fadeIn",	
+  });
+
+//клик по превью-картинке
+  $(".my-foto").click(function(){
+
+     var that = this;
+
+   //копируем атрибуты из превью-картинки в контейнер-картинку
+     $(".my-foto-container").fadeOut(600, function(){
+
+       $(this).attr("src",               $(that).attr("data-large"))              // путь до small картинки
+              .attr("data-large",       $(that).attr("data-large"))       // путь до big картинки
+    
+              //дополнительные атрибуты, если есть
+              //.attr("data-title",       $(that).attr("data-title"))       // заголовок подсказки
+              //.attr("data-help",        $(that).attr("data-help"))        // текст подсказки    
+              //.attr("data-text-bottom", $(that).attr("data-text-bottom")) // текст снизу картинки
+              
+              .fadeIn(1000);				
+     });
+ });	  
+ });

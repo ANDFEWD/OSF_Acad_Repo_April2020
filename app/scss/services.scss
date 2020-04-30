@@ -67,6 +67,9 @@
     }
   }
   .product-container__description-list {
+    @include mq($until: tablet) {
+      left: 30px;
+    }
     display: none;
     position: absolute;
     left: 70px;

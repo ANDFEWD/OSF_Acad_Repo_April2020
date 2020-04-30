@@ -79,6 +79,11 @@
   border-color: #e8e2d6;
   border-radius: 25px;
 }
+@media (max-width: 47.99em) {
+  .description-buttons__top .product-container__description-list {
+    left: 30px;
+  }
+}
 .description-buttons__top .product-container__description-list .product-container-element {
   display: flex;
   width: 100%;
