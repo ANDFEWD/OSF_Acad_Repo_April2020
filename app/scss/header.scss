@@ -1185,9 +1185,9 @@ body {
   }
 
   .popular {
-    // @include mq($until: tablet) {
-    //   display: none;
-    // }
+    @include mq($until: tablet) {
+      margin-left: 0px;
+    }
     // @include mq($from: tablet) {
     margin-top: 75px;
     display: flex;

@@ -1508,6 +1508,11 @@ body .popular {
   flex-flow: row wrap;
   justify-content: space-between;
 }
+@media (max-width: 47.99em) {
+  body .popular {
+    margin-left: 0px;
+  }
+}
 body .popular .popular__title {
   display: flex;
   width: 100%;
